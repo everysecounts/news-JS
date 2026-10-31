@@ -1,12 +1,4 @@
-
-export type NewsCategory =
-    | 'business'
-    | 'entertainment'
-    | 'general'
-    | 'health'
-    | 'science'
-    | 'sports'
-    | 'technology';
+export type NewsCategory = 'business' | 'entertainment' | 'general' | 'health' | 'science' | 'sports' | 'technology';
 
 export type NewsLanguage =
     | 'ar'
@@ -60,3 +52,19 @@ export interface EverythingResponse {
     totalResults: number;
     articles: Article[];
 }
+
+export enum HTTPMethods {
+    GET = 'GET',
+    POST = 'POST',
+    PUT = 'PUT',
+    DELETE = 'DELETE',
+}
+
+export type RequestOptions = Record<string, string | undefined>;
+
+export interface RequestParams {
+    endpoint: string;
+    options?: RequestOptions;
+}
+
+export type ResponseCallback<T> = (data: T) => void;
