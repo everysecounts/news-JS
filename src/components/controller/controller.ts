@@ -5,8 +5,7 @@ class AppController extends AppLoader {
     public getSources(callback: ResponseCallback<SourcesResponse>): void {
         super.getResp<SourcesResponse>(
             {
-                // endpoint: 'sources',
-                endpoint: 'mocks/sources',
+                endpoint: 'sources',
             },
             callback
         );
@@ -36,8 +35,7 @@ class AppController extends AppLoader {
 
         super.getResp<EverythingResponse>(
             {
-                // endpoint: 'everything',
-                endpoint: 'mocks/everything',
+                endpoint: 'everything',
                 options: {
                     sources: sourceId,
                 },
