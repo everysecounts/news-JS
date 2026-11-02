@@ -31,6 +31,8 @@ export interface Source {
     country: string;
 }
 
+export type SourceItem = Pick<Source, 'id' | 'name'>;
+
 export interface Article {
     source: NewsSource;
     author: string | null;
@@ -63,8 +65,8 @@ export enum HTTPMethods {
 export type RequestOptions = Record<string, string | undefined>;
 
 export interface RequestParams {
-    endpoint: string;
-    options?: RequestOptions;
+    readonly endpoint: string;
+    readonly options?: Readonly<RequestOptions>;
 }
 
 export type ResponseCallback<T> = (data: T) => void;

@@ -1,8 +1,8 @@
-import type { Source } from '../../../types';
+import type { SourceItem } from '../../../types';
 import './sources.css';
 
 class Sources {
-    public draw(data: Source[]): void {
+    public draw(data: SourceItem[]): void {
         const fragment: DocumentFragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector<HTMLTemplateElement>('#sourceItemTemp');
         const sourcesContainer = document.querySelector<HTMLElement>('.sources');
@@ -11,7 +11,7 @@ class Sources {
             throw new Error('Sources template or container was not found');
         }
 
-        data.forEach((source: Source) => {
+        data.forEach((source: SourceItem) => {
             const sourceClone: DocumentFragment = sourceItemTemp.content.cloneNode(true) as DocumentFragment;
 
             sourceClone.querySelector<HTMLElement>('.source__item-name')!.textContent = source.name;

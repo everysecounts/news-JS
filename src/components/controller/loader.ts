@@ -3,9 +3,9 @@ import type { RequestOptions, RequestParams, ResponseCallback } from '../../type
 
 class Loader {
     private readonly baseLink: string;
-    private readonly options: RequestOptions;
+    private readonly options: Readonly<RequestOptions>;
 
-    constructor(baseLink: string, options: RequestOptions) {
+    constructor(baseLink: string, options: Readonly<RequestOptions>) {
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -31,7 +31,7 @@ class Loader {
         return res;
     }
 
-    private makeUrl(options: RequestOptions, endpoint: string): string {
+    private makeUrl(options: Readonly<RequestOptions>, endpoint: string): string {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -46,7 +46,7 @@ class Loader {
         method: HTTPMethods,
         endpoint: string,
         callback: ResponseCallback<T>,
-        options: RequestOptions = {}
+        options: Readonly<RequestOptions> = {}
     ): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then((res: Response) => this.errorHandler(res))
