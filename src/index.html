@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
         <title>NewsPortal</title>
     </head>
     <body>
         <header>
             <h1>News Portal</h1>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open sources menu"
+                aria-expanded="false"
+                aria-controls="sources"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </header>
         <main>
             <div class="sources buttons"></div>
             <div class="news"></div>
         </main>
-        <footer>
+        <footer class="footer">
             <p class="copyright">
                 Copyright <a href="https://newsapi.org">NewsAPI</a>
             </p>
+
+            <div class="footer__links">
+                <a
+                    class="footer__github"
+                    href="https://github.com/everysecounts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <span class="footer__year">2026</span>
+
+                <a
+                    class="footer__rsschool"
+                    href="https://rs.school/courses/javascript"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Rolling Scopes School JavaScript course"
+                >
+                    <img src="./assets/rss-logo.svg" alt="Rolling Scopes School">
+                </a>
+            </div>
         </footer>
 
         <template id="sourceItemTemp">

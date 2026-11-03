@@ -1,3 +1,12 @@
+.news {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 1rem;
+}
+
 .news__item {
     display: flex;
     flex-direction: column;
@@ -124,7 +133,7 @@
 @media (min-width: 640px) {
     .news__item {
         flex-direction: row;
-        max-width: 700px;
+        max-width: 900px;
     }
 
     .news__item .news__meta {
